@@ -8,15 +8,28 @@ function playerPlay() {
     return playerSelection.toLowerCase()
 }
 
+let score = 0;
+let computerScore = 0;
 
 function playGame(playerSelection, computerSelection) {
     if(playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "rock") {
+        score++;
         return "You win!"
     } else if(playerSelection == "rock" && computerSelection == "paper" || playerSelection == "scissors" && computerSelection == "rock" || playerSelection == "paper" && computerSelection == "scissors") {
-        return "The Computer wins!"
+        computerScore++;
+        return "Computer Wins!"
     } else {
         return "Draw!"
     }
 }
 
-console.log(playGame(playerPlay(), computerPlay()));
+function game() {
+    for(let i = 1; i < 6; i++) {
+        console.log(playGame(playerPlay(), computerPlay()));
+        console.log("Score:", score);
+        console.log("Computer Score", computerScore)
+    }
+
+}
+
+game();
