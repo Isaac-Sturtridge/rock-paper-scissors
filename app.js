@@ -10,6 +10,7 @@ function playerPlay() {
 
 let score = 0;
 let computerScore = 0;
+let score_display = document.getElementById("score_display")
 
 function playGame(playerSelection, computerSelection) {
     if(playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "rock") {
@@ -29,7 +30,7 @@ function game() {
         console.log("Score:", score);
         console.log("Computer Score", computerScore)
     }
-
+    score_display.innerHTML = "Score: " + score + " Computer Score: " + computerScore
 }
 
 game();
