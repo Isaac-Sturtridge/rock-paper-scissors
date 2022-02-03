@@ -1,0 +1,27 @@
+body {
+    background-color: oldlace;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button {
+    background-color: teal;
+    height: 10%;
+    width: 10%;
+    font-weight: 800px;
+    font-size: 20px;
+}
+
+#results {
+    padding: 20px;
+}
