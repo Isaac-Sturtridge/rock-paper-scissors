@@ -32,7 +32,13 @@ function restartGame() {
     buttons.append(playAgain)
     // playAgain.addClass('button')
     playAgain.innerHTML = "Play Again"
-    playAgain.addEventListener('click', () => gameOn = true)
+    playAgain.addEventListener('click', () => {
+        gameOn = true
+        score = 0;
+        score_display.innerHTML = ''
+        message.innerHTML = ''
+        finish.innerHTML = ''
+    })
 }
 
 function updateScore() {
@@ -42,8 +48,8 @@ function updateScore() {
 function endGameCheck() {
     if(score >= 5) {
         results.append(finish)
-        finish.innerHTML = "Human wins! Well done!";
         gameOn = false;
+        finish.innerHTML = "Human wins! Well done!";
         restartGame();
     } else if(computerScore >= 5) {
         results.append(finish)
