@@ -35,6 +35,7 @@ function restartGame() {
     playAgain.addEventListener('click', () => {
         gameOn = true
         score = 0;
+        computerScore = 0;
         score_display.innerHTML = ''
         message.innerHTML = ''
         finish.innerHTML = ''
@@ -60,20 +61,23 @@ function endGameCheck() {
 }
 
 
+
 function playGame(playerSelection, computerSelection) {
-    if(playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "rock") {
-        score++;
-        updateScore();
-        message.innerHTML = "You win!"
-    } else if(playerSelection == "rock" && computerSelection == "paper" || playerSelection == "scissors" && computerSelection == "rock" || playerSelection == "paper" && computerSelection == "scissors") {
-        computerScore++;
-        updateScore();
-        message.innerHTML = "Computer wins!"
-    } else {
-        updateScore();
-        message.innerHTML = "Draw!"
-    }
-    endGameCheck();
+    if(gameOn) {
+        if(playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "rock") {
+            score++;
+            updateScore();
+            message.innerHTML = "You win!"
+        } else if(playerSelection == "rock" && computerSelection == "paper" || playerSelection == "scissors" && computerSelection == "rock" || playerSelection == "paper" && computerSelection == "scissors") {
+            computerScore++;
+            updateScore();
+            message.innerHTML = "Computer wins!"
+        } else {
+            updateScore();
+            message.innerHTML = "Draw!"
+        }
+        endGameCheck();
+    }  
 }
 
 function game() {
